@@ -1,0 +1,613 @@
+/* ============================================
+   VARIÁVEIS GLOBAIS
+   ============================================ */
+:root {
+  --bg: #0a0a12;
+  --bg-card: #15151f;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --roxo: #a855f7;
+  --rosa: #ec4899;
+  --laranja: #fb923c;
+  --gradiente: linear-gradient(135deg, #a855f7, #ec4899, #fb923c);
+}
+
+/* ============================================
+   RESET
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================================
+   HEADER / NAVEGAÇÃO
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+/* ============================================
+   HERO (com imagem + texto lado a lado)
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Névoa colorida de fundo (mantém o efeito) */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+/* Container das duas colunas */
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Coluna da imagem */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  width: 380px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(168, 85, 247, 0.4));
+  /* Sombra roxa brilhante embaixo do computador ✨ */
+  animation: float 4s ease-in-out infinite;
+  /* Animação de flutuar */
+}
+
+/* Animação do computador flutuando */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Coluna do texto */
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-greeting {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.hero-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradiente);
+  color: white;
+   box-shadow: 0 4px 14px rgba(168, 85, 247, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  border-color: var(--roxo);
+  color: var(--roxo);
+}
+
+/* ============================================
+   SEÇÕES GENÉRICAS
+   ============================================ */
+section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* ============================================
+   SOBRE
+   ============================================ */
+.sobre-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: all 0.3s;
+}
+
+.skill i {
+  font-size: 1.2rem;
+}
+
+.skill:hover {
+  border-color: var(--roxo);
+  color: var(--roxo);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   PROJETOS
+   ============================================ */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradiente);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.15);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.card-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.card-tags span {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--roxo);
+  transition: all 0.3s;
+}
+
+.card-tags span:hover {
+  background: rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-link {
+  color: var(--rosa);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-link:hover {
+  color: var(--laranja);
+}
+
+/* ============================================
+   CONTATO
+   ============================================ */
+.contato {
+  text-align: center;
+}
+
+.contato p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.contato-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contato-links .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   CARROSSEL INFINITO DE TECNOLOGIAS
+   ============================================ */
+
+.skills-carousel {
+  width: 100%;
+  overflow: hidden;
+  /* Corta o que passa das bordas (essencial) */
+  position: relative;
+  padding: 1rem 0;
+
+  /* Máscara: fade nas laterais pra suavizar a entrada/saída */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.skills-track {
+  display: flex;
+  width: max-content;
+  /* Largura se ajusta ao conteúdo (importante!) */
+  animation: scroll-skills 25s linear infinite;
+  /* 25s = velocidade. Menor número = mais rápido */
+}
+
+/* Pausa ao passar o mouse (opcional, mas fica legal) */
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+
+.skills-group {
+  display: flex;
+  gap: 0.7rem;
+  padding-right: 0.7rem;
+  /* Espaço entre o fim de um grupo e o começo do outro */
+}
+
+/* A ANIMAÇÃO mágica */
+@keyframes scroll-skills {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+    /* Move exatamente METADE da largura total.
+       Como temos 2 grupos idênticos, isso volta ao início visualmente. */
+  }
+}
+
+/* Estilo de cada "pílula" de skill (mantém o que já tinha) */
+.skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: all 0.3s;
+  white-space: nowrap;
+  /* Impede que o texto quebre dentro da pílula */
+  flex-shrink: 0;
+  /* Impede que o flex encolha a pílula */
+}
+
+.skill i {
+  font-size: 1.2rem;
+}
+
+.skill:hover {
+  border-color: var(--roxo);
+  color: var(--roxo);
+  transform: translateY(-2px);
+}
+/* ============================================
+   SETA INDICANDO SCROLL
+   ============================================ */
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.scroll-down:hover {
+  border-color: var(--roxo);
+}
+
+.scroll-down span {
+  width: 4px;
+  height: 8px;
+  background: var(--roxo);
+  border-radius: 2px;
+  animation: scroll-bounce 1.5s infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.3;
+  }
+}
+
+/* ============================================
+   ANIMAÇÃO DE ENTRADA (fade-in ao rolar)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 640px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+
+  .hero-container {
+    flex-direction: column;
+    /* Empilha: imagem em cima, texto embaixo */
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 220px;
+    /* Menor no celular */
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patricia | Portfólio</title>
+
+  <!-- Ícones das tecnologias (Devicon) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Nosso CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO / NAVEGAÇÃO ===== -->
+  <header class="header">
+    <nav class="nav">
+      <a href="#home" class="logo">Patricia</a>
+      <ul class="nav-links">
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- ===== SEÇÃO HERO ===== -->
+<section id="home" class="hero">
+  <div class="hero-container">
+
+    <!-- COLUNA DA ESQUERDA: IMAGEM -->
+    <div class="hero-image">
+      <img src="icone-d-ordinateur-portable-violet.png" alt="Computador retrô roxo">
+    </div>
+
+    <!-- COLUNA DA DIREITA: TEXTO -->
+    <div class="hero-content">
+      <p class="hero-greeting">👋 Olá, eu sou</p>
+      <h1 class="hero-title">Patricia</h1>
+      <h2 class="hero-subtitle">Suporte • Front-end • Dados</h2>
+      <p class="hero-text">
+        Formada em Sistemas de Informação, com experiência em suporte
+        de TI e atendimento a usuários. Tenho interesse em tecnologia,
+        programação e dados, e busco continuar desenvolvendo minhas
+        habilidades por meio de projetos práticos.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="#contato" class="btn btn-secondary">Falar comigo</a>
+      </div>
+    </div>
+
+  </div>
+  
+</section>
+
+  <!-- ===== Tecnologias ===== -->
+ <!-- ===== CARROSSEL DE TECNOLOGIAS ===== -->
+<div class="skills-carousel">
+  <div class="skills-track">
+
+    <!-- GRUPO 1 -->
+    <div class="skills-group">
+      <span class="skill"><i class="devicon-python-plain colored"></i> Python</span>
+      <span class="skill"><i class="devicon-pandas-plain colored"></i> Pandas</span>
+      <span class="skill"><i class="devicon-html5-plain colored"></i> HTML</span>
+      <span class="skill"><i class="devicon-css3-plain colored"></i> CSS</span>
+      <span class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+      <span class="skill">🗄️ SQL</span>
+      <span class="skill">📊 Excel</span>
+      <span class="skill">💬 Suporte de TI</span>
+    </div>
+
+    <!-- GRUPO 2 (cópia idêntica — essencial pro loop infinito) -->
+    <div class="skills-group" aria-hidden="true">
+      <span class="skill"><i class="devicon-python-plain colored"></i> Python</span>
+      <span class="skill"><i class="devicon-pandas-plain colored"></i> Pandas</span>
+      <span class="skill"><i class="devicon-html5-plain colored"></i> HTML</span>
+      <span class="skill"><i class="devicon-css3-plain colored"></i> CSS</span>
+      <span class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+      <span class="skill">🗄️ SQL</span>
+      <span class="skill">📊 Excel</span>
+      <span class="skill">💬 Suporte de TI</span>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- ===== SEÇÃO PROJETOS ===== -->
+  <section id="projetos" class="projetos reveal">
+    <h2 class="section-title">Projetos</h2>
+
+    <div class="projetos-grid">
+
+      <!-- CARD 1 -->
+      <article class="card">
+        <h3>Automação de Dados de Faturamento</h3>
+        <p>
+          Projeto em Python para extrair informações de arquivos PDF e
+          organizar os dados automaticamente em uma planilha Excel,
+          reduzindo o trabalho manual de consulta e organização.
+        </p>
+        <div class="card-tags">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>pdfplumber</span>
+          <span>Regex</span>
+          <span>Excel</span>
+        </div>
+        <a href="#" class="card-link">Ver no GitHub →</a>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <h3>Portfólio Pessoal</h3>
+        <p>
+          Site pessoal desenvolvido para apresentar minha trajetória
+          profissional, habilidades, projetos e conhecimentos na área
+          de tecnologia, com foco em uma experiência simples, moderna
+          e responsiva.
+        </p>
+        <div class="card-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <a href="#" class="card-link">Ver site →</a>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <h3>Sistema de Cadastro</h3>
+        <p>
+          Projeto para praticar lógica de programação e manipulação de
+          dados, permitindo cadastrar, consultar, alterar e excluir
+          informações de forma estruturada.
+        </p>
+        <div class="card-tags">
+          <span>Python</span>
+          <span>Lógica</span>
+          <span>Estruturas de Dados</span>
+        </div>
+        <a href="#" class="card-link">Ver no GitHub →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO CONTATO ===== -->
+  <section id="contato" class="contato reveal">
+    <h2 class="section-title">Vamos conversar?</h2>
+    <p>Estou aberta a oportunidades e trocas sobre tecnologia.</p>
+
+    <div class="contato-links">
+      <a href="mailto:seuemail@email.com" class="btn btn-primary">📧 Email</a>
+      <a href="https://linkedin.com/in/seuperfil" class="btn btn-secondary">💼 LinkedIn</a>
+      <a href="https://github.com/seuusuario" class="btn btn-secondary">💻 GitHub</a>
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <p>Feito com 💜 por Patricia © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
